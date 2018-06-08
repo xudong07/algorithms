@@ -3,32 +3,91 @@
 Python版数据结构和算法
 =========================================
 
-python版数据结构和算法实现的简约版小示例
+python版数据结构和算法实现的简约版小示例  
 
+谢谢关注。有多种方法可以贡献你的代码。[从这里开始吧](https://github.com/keon/algorithms/blob/master/CONTRIBUTING.md)  
+
+[或者可以用不同语言来完成上述算法，期待加入](https://github.com/yunshuipiao/sw-algorithms)：https://github.com/yunshuipiao/sw-algorithms
+
+## 测试
+
+### 单元测试
+如下代码可以运行全部测试：  
+```
+
+python3 -m unittest discover tests
+
+```
+
+针对特定模块(比如：sort)的测试， 可以使用如下代码：  
+```
+
+python3 -m unittest tests.test_sort
+
+```
+
+### 使用pytest
+如下代码运行所有测试代码：  
+```
+
+pyhton3 -m pytest tests
+
+```
+
+## 安装
+如果想在代码中使用算法API， 可按如下步骤进行：
+```
+
+pip3 install git+https://github.com/keon/algorithms
+
+```
+
+通过创建python文件(比如：在sort模块使用merge_sort)进行测试： 
+```
+
+from sort import merge_sort
+
+if __name__ == "__main__":
+    my_list = [1, 8, 3, 5, 6]
+    my_list = merge_sort.merge_sort(my_list)
+    print(my_list)
+    
+```
+
+## 卸载
+如下代码可卸载该API：
+
+```
+
+pip3 uninstall -y algorithms
+
+```
 
 ## 实现列表
 
-- [array:数组](array)
-    - [circular_counter：约瑟夫环](array/circular_counter.py)
-    - [flatten：数组降维](array/flatten.py)
-    - [garage：停车场](array/garage.py)
-    - [longest_non_repeat：最长不重复子串](array/longest_non_repeat.py/)
-    - [merge_intervals：合并重叠间隔](array/merge_intervals.py)
-    - [missing_ranges：遗失的范围](array/missing_ranges.py)
-    - [plus_one：加一运算](array/plus_one.py)
-    - [rotate_array：反转数组](array/rotate_array.py)
-    - [summary_ranges：数组范围](array/summary_ranges.py)
-    - [three_sum：三数和为零](array/three_sum.py)
-    - [two_sum：两数和](array/two_sum.py)
+- [array:数组](arrays)
+    - [delete_nth: 删除第n项](arrays/delete_nth.py)
+    - [flatten：数组降维](arrays/flatten.py)
+    - [garage：停车场](arrays/garage.py)
+    - [josephus_problem: 约瑟夫问题](arrays/josephus_problem.py)
+    - [longest_non_repeat：最长不重复子串](arrays/longest_non_repeat.py/)
+    - [merge_intervals：合并重叠间隔](arrays/merge_intervals.py)
+    - [missing_ranges：遗失的范围](arrays/missing_ranges.py)
+    - [plus_one：加一运算](arrays/plus_one.py)
+    - [rotate_array：反转数组](arrays/rotate_array.py)
+    - [summary_ranges：数组范围](arrays/summary_ranges.py)
+    - [three_sum：三数和为零](arrays/three_sum.py)
+    - [two_sum：两数和](arrays/two_sum.py)
+    - [move_zeros_to_end: 0后置问题](arrays/move_zeros_to_end.py)
 - [backtrack：回溯](backtrack)
     - [general_solution.md：一般方法](backtrack/)
     - [anagram：同字母异序词](backtrack/anagram.py)
-    - [array_sum_combinations：数组和](backtrack/array_sum_combination.py)
+    - [array_sum_combinations：数组和](backtrack/array_sum_combinations.py)
     - [combination_sum：和的合并](backtrack/combination_sum.py)
     - [expression_add_operators：给表达式添加运算符](backtrack/expression_add_operators.py)
     - [factor_combinations：因素组合](backtrack/factor_combinations.py)
     - [generate_abbreviations：缩写生成](backtrack/generate_abbreviations.py)
-    - [generate_parenthesis：插入生成](backtrack/generate_parenthesis.py)
+    - [generate_parenthesis：括号生成](backtrack/generate_parenthesis.py)
     - [letter_combination：字母组合](backtrack/letter_combination.py)
     - [palindrome_partitioning：字符串的所有回文子串](backtrack/palindrome_partitioning.py)
     - [pattern_match：模式匹配](backtrack/pattern_match.py)
@@ -48,7 +107,7 @@ python版数据结构和算法实现的简约版小示例
     - [single_number2：寻找出现1次的数（2)](bit/single_number2.py)
     - [single_number:寻找出现1次的数（1)](bit/single_number.py)
     - [subsets: 求所有子集](bit/subsets.py)
-    - [add_without_operator：无操作符的加法](bit/add_without_operator.py)
+    - [add_bitwise_operator：无操作符的加法](bit/add_bitwise_operator.py)
 - [calculator：计算](calculator)
     - [math_parser: 数字解析](calculator/math_parser.py)
 - [dfs：深度优先搜索](dfs)
@@ -96,21 +155,22 @@ python版数据结构和算法实现的简约版小示例
     - [swap_in_pairs：链表节点交换](linkedlist/swap_in_pairs.py)
 - [map：映射](map)
     - [hashtable：哈希表](map/hashtable.py)
+    - [separate_chaining_hashtable：拉链法哈希表](map/separate_chaining_hashtable.py)
     - [longest_common_subsequence：最长公共子序列](map/longest_common_subsequence.py)
     - [randomized_set：随机集](map/randomized_set.py)
     - [valid_sudoku：有效数独](map/valid_sudoku.py)
-- [math：数学问题](math)
-    - [extended_gcd：扩展欧几里得算法](math/extended_gcd.py)
-    - [gcd/lcm：最大公约数和最小公倍数](math/gcd.py)
-    - [prime_test：主要测试](math/prime_test.py)
-    - [primes_sieve_of_eratosthenes：埃拉托色尼的质数筛](math/primes_sieve_of_eratosthenes.py)
-    - [generate_strobogrammtic：生成对称数](math/generate_strobogrammtic.py)
-    - [is_strobogrammatic：判断对称数](math/is_strobogrammatic.py)
-    - [nth_digit：第n位](math/nth_digit.py)
-    - [rabin_miller：米勒-拉宾素性检验](math/rabin_miller.py)
-    - [rsa：rsa加密](math/rsa.py)
-    - [sqrt_precision_factor：开发精度因素](math/sqrt_precision_factor.py)
-    - [pythagoras：毕达哥拉斯](math/pythagoras.py)
+- [math：数学问题](maths)
+    - [extended_gcd：扩展欧几里得算法](maths/extended_gcd.py)
+    - [gcd/lcm：最大公约数和最小公倍数](maths/gcd.py)
+    - [prime_test：主要测试](maths/prime_test.py)
+    - [primes_sieve_of_eratosthenes：埃拉托色尼的质数筛](maths/primes_sieve_of_eratosthenes.py)
+    - [generate_strobogrammtic：生成对称数](maths/generate_strobogrammtic.py)
+    - [is_strobogrammatic：判断对称数](maths/is_strobogrammatic.py)
+    - [nth_digit：第n位](maths/nth_digit.py)
+    - [rabin_miller：米勒-拉宾素性检验](maths/rabin_miller.py)
+    - [rsa：rsa加密](maths/rsa.py)
+    - [sqrt_precision_factor：开发精度因素](maths/sqrt_precision_factor.py)
+    - [pythagoras：毕达哥拉斯](maths/pythagoras.py)
 - [matrix：矩阵](matrix)
     - [matrix_rotation：矩阵旋转](matrix/matrix_rotation.txt)
     - [copy_transform：复制变换](matrix/copy_transform.py)
@@ -120,12 +180,12 @@ python版数据结构和算法实现的简约版小示例
     - [sparse_mul：稀疏矩阵](matrix/sparse_mul.py)
     - [spiral_traversal：循环遍历](matrix/spiral_traversal.py)
     - [count_paths：计算路径](matrix/count_paths.py)
-- [queue：队列](queue)
-    - [max_sliding_window：最大移动窗口](queue/max_sliding_window.py)
-    - [moving_average：移动平均](queue/moving_average.py)
-    - [queue：队列](queue/queue.py)
-    - [reconstruct_queue：重建队列](queue/reconstruct_queue.py)
-    - [zigzagiterator：锯齿形迭代](queue/zigzagiterator.py)
+- [queue：队列](queues)
+    - [max_sliding_window：最大移动窗口](queues/max_sliding_window.py)
+    - [moving_average：移动平均](queues/moving_average.py)
+    - [queue：队列](queues/queue.py)
+    - [reconstruct_queue：重建队列](queues/reconstruct_queue.py)
+    - [zigzagiterator：锯齿形迭代](queues/zigzagiterator.py)
 - [search：查找](search)
     - [binary_search：二分查找](search/binary_search.py)
     - [count_elem：元素计数](search/count_elem.py)
@@ -152,27 +212,27 @@ python版数据结构和算法实现的简约版小示例
     - [simplify_path：简化路径](stack/simplify_path.py)
     - [stack：栈](stack/stack.py)
     - [valid_parenthesis：验证括号](stack/valid_parenthesis.py)
-- [string：字符串](string)
-    - [add_binary：二进制数相加](string/add_binary.py)
-    - [breaking_bad：打破坏](string/breaking_bad.py)
-    - [decode_string：字符串编码](string/decode_string.py)
-    - [encode_decode：编解码](string/encode_decode.py)
-    - [group_anagrams：群组错位词](string/group_anagrams.py)
-    - [int_to_roman：整数转换罗马数字](string/int_to_roman.py)
-    - [is_palindrome：回文字符串](string/is_palindrome.py)
-    - [license_number：拍照号码](string/license_number.py)
-    - [make_sentence：造句](string/make_sentence.py)
-    - [multiply_strings：字符串相乘](string/multiply_strings.py)
-    - [one_edit_distance：一个编辑距离](string/one_edit_distance.py)
-    - [rabin_karp：Rabin-Karp 算法](string/rabin_karp.py)
-    - [reverse_string：反转字符串](string/reverse_string.py)
-    - [reverse_vowel：反转元音](string/reverse_vowel.py)
-    - [reverse_words：反转单词](string/reverse_words.py)
-    - [roman_to_int：罗马数转换整数](string/roman_to_int.py)
-    - [word_squares：单词平方](string/word_squares.py)
+- [string：字符串](strings)
+    - [add_binary：二进制数相加](strings/add_binary.py)
+    - [breaking_bad：打破坏](strings/breaking_bad.py)
+    - [decode_string：字符串编码](strings/decode_string.py)
+    - [encode_decode：编解码](strings/encode_decode.py)
+    - [group_anagrams：群组错位词](strings/group_anagrams.py)
+    - [int_to_roman：整数转换罗马数字](strings/int_to_roman.py)
+    - [is_palindrome：回文字符串](strings/is_palindrome.py)
+    - [license_number：拍照号码](strings/license_number.py)
+    - [make_sentence：造句](strings/make_sentence.py)
+    - [multiply_strings：字符串相乘](strings/multiply_strings.py)
+    - [one_edit_distance：一个编辑距离](strings/one_edit_distance.py)
+    - [rabin_karp：Rabin-Karp 算法](strings/rabin_karp.py)
+    - [reverse_string：反转字符串](strings/reverse_string.py)
+    - [reverse_vowel：反转元音](strings/reverse_vowel.py)
+    - [reverse_words：反转单词](strings/reverse_words.py)
+    - [roman_to_int：罗马数转换整数](strings/roman_to_int.py)
+    - [word_squares：单词平方](strings/word_squares.py)
 - [tree：树](tree)
-    - [segment-tree：线段树](tree/Segment_Tree)
-        - [segment_tree：线段树](tree/Segment_Tree/segment_tree.py)
+    - [segment-tree：线段树](tree/segment_tree)
+        - [segment_tree：线段树](tree/segment_tree/segment_tree.py)
     - [binary_tree_paths：二叉树路径](tree/binary_tree_paths.py)
     - [bintree2list：二叉树转换链表](tree/bintree2list.py)
     - [bst：二叉搜索树](tree/tree/bst)
@@ -211,4 +271,17 @@ python版数据结构和算法实现的简约版小示例
         - [trie：字典](tree/trie/trie.py)
 - [union-find：并查集](union-find)
     - [count_islands：岛计数](union-find/count_islands.py)
+ 
+
+## 贡献
+谢谢主要维护人员：
+
+* [Keon Kim](https://github.com/keon)
+* [Rahul Goswami](https://github.com/goswami-rahul)
+* [Christian Bender](https://github.com/christianbender)
+* [Ankit Agarwal](https://github.com/ankit167)
+* [Hai Hoang Dang](https://github.com/danghai)
+* [Saad](https://github.com/SaadBenn)
+
+以及[所有贡献者](https://github.com/keon/algorithms/graphs/contributors)
 
